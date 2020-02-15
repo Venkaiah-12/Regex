@@ -41,6 +41,16 @@ echo "valid email $email"
 else
 echo "invalid email"
 fi
+} 
+password(){
+pass=$1
+#passwor=$(echo "$pass" |awk '[\w@-]{8,20}$/{print $0}')
+if [[ ${#pass} -ge 6 && "$pass" == *[A-Z]* && "$pass" == *[a-z]* && "$pass" == *[0-9]* ]]
+then
+echo "valid password"
+else
+echo "invalid password"
+fi
 }
 userDetails(){
 echo "enter the Firstname"
@@ -55,5 +65,8 @@ mobileNumber $mobilenum
 echo "enter the emailid "
 read email
 emailId $email
+echo "Enter the password"
+read passwd
+password  $passwd
 }
 userDetails
